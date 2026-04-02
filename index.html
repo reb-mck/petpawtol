@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Pet Pawtol">
 <meta name="theme-color" content="#C8502A">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" id="pwa-icon" href="">
 <title>Pet Pawtol</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
@@ -512,6 +512,39 @@ function show(page) {
   document.getElementById('pg-' + page).classList.add('active');
   document.getElementById('n-' + page).classList.add('active');
 }
+</script>
+
+<script>
+(function(){
+  var c = document.createElement('canvas');
+  c.width = 180; c.height = 180;
+  var x = c.getContext('2d');
+  x.fillStyle = '#C8502A';
+  x.beginPath();
+  x.roundRect(0,0,180,180,36);
+  x.fill();
+  x.fillStyle = '#E0A860';
+  x.beginPath(); x.ellipse(90,118,55,42,0,0,Math.PI*2); x.fill();
+  x.beginPath(); x.ellipse(90,88,52,48,0,0,Math.PI*2); x.fill();
+  x.fillStyle = '#EDB870';
+  x.beginPath(); x.ellipse(90,82,42,40,0,0,Math.PI*2); x.fill();
+  x.fillStyle = '#C07838';
+  x.beginPath(); x.ellipse(62,52,15,19,-.3,0,Math.PI*2); x.fill();
+  x.beginPath(); x.ellipse(118,52,15,19,.3,0,Math.PI*2); x.fill();
+  x.fillStyle = '#EDB870';
+  x.beginPath(); x.ellipse(90,82,38,36,0,0,Math.PI*2); x.fill();
+  x.fillStyle = '#1A0A02';
+  x.beginPath(); x.arc(72,76,8,0,Math.PI*2); x.fill();
+  x.beginPath(); x.arc(108,76,8,0,Math.PI*2); x.fill();
+  x.fillStyle = 'white';
+  x.beginPath(); x.arc(69,73,3,0,Math.PI*2); x.fill();
+  x.beginPath(); x.arc(105,73,3,0,Math.PI*2); x.fill();
+  x.fillStyle = '#0A0402';
+  x.beginPath(); x.ellipse(90,95,11,8,0,0,Math.PI*2); x.fill();
+  x.fillStyle = '#5B3E87';
+  x.beginPath(); x.ellipse(90,111,10,9,0,0,Math.PI*2); x.fill();
+  document.getElementById('pwa-icon').href = c.toDataURL('image/png');
+})();
 </script>
 </body>
 </html>
